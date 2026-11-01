@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: agent-advisory-api
+    runtime: node
+    plan: free
+    buildCommand: "true"
+    startCommand: node server.mjs
+    healthCheckPath: /health
+    envVars:
+      - key: RAPIDAPI_PROXY_SECRET
+        sync: false

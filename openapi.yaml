@@ -1,0 +1,17 @@
+openapi: 3.0.3
+info: {title: Agent Package Advisory Check, version: 1.0.0, description: Real-time OSV advisories for any package before your AI agent installs it.}
+servers: [{url: https://agent-advisory-api.onrender.com}]
+paths:
+  /check:
+    get:
+      summary: Check a package for known security advisories
+      parameters:
+        - {name: pkg, in: query, required: true, schema: {type: string}, example: lodash}
+        - {name: ecosystem, in: query, schema: {type: string, default: npm, enum: [npm, PyPI, Go, crates.io, Maven, NuGet, RubyGems, Packagist, Pub, Hex, Hackage, CRAN, GitHub Actions, Debian, Alpine, Ubuntu]}}
+        - {name: version, in: query, schema: {type: string}, example: 4.17.15}
+      responses:
+        '200': {description: Advisory list, content: {application/json: {schema: {type: object, properties: {pkg: {type: string}, ecosystem: {type: string}, count: {type: integer}, advisories: {type: array, items: {type: object, properties: {id: {type: string}, aliases: {type: array, items: {type: string}}, summary: {type: string}, severity: {type: string}, url: {type: string}}}}}}}}}
+        '400': {description: Invalid input}
+        '429': {description: Rate limited}
+  /health:
+    get: {summary: Health, responses: {'200': {description: OK}}}
