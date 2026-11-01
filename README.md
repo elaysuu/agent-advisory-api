@@ -14,6 +14,3 @@ MIT.
 
 - VS Code / Open VSX extension: https://open-vsx.org/extension/elaysuu/agent-package-advisory
 - Apify actor: https://apify.com/crimson_goby/osv-package-checker
-
-
-
