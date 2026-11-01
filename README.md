@@ -9,3 +9,11 @@ HTTP API: known security advisories (OSV) for a package/version, built for AI ag
 - **Node/Docker:** `node server.mjs` or `Dockerfile`. Env `RAPIDAPI_PROXY_SECRET`, `PORT`.
 
 MIT.
+
+## Also available as
+
+- VS Code / Open VSX extension: https://open-vsx.org/extension/elaysuu/agent-package-advisory
+- Apify actor: https://apify.com/crimson_goby/osv-package-checker
+
+
+
