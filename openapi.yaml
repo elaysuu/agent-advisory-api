@@ -1,6 +1,6 @@
 openapi: 3.0.3
 info: {title: Agent Package Advisory Check, version: 1.0.0, description: Real-time OSV advisories for any package before your AI agent installs it.}
-servers: [{url: https://agent-advisory-api.onrender.com}]
+servers: [{url: https://agent-advisory-api.deno.dev}]
 paths:
   /check:
     get:

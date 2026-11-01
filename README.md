@@ -3,4 +3,9 @@ HTTP API: known security advisories (OSV) for a package/version, built for AI ag
 `GET /check?pkg=lodash&ecosystem=npm&version=4.17.15`
 - Paid access: RapidAPI listing — RAPIDAPI_URL_PLACEHOLDER
 - Related: [Agent Advisory Gate Pro](https://setrov.gumroad.com/l/zdojns) · [MCP Advisory Flag Pro](https://setrov.gumroad.com/l/hqviee) · [agent-config-audit Team Pack](https://setrov.gumroad.com/l/cpclzn)
-Self-host: `node server.mjs` (Node 20+). Env: `RAPIDAPI_PROXY_SECRET`, `PORT`. MIT.
+## Deploy
+- **Deno Deploy (primary):** entrypoint `main.ts` (uses `lib.mjs`), no build step. Env `RAPIDAPI_PROXY_SECRET` (if unset, requests are allowed — smoke-test only).
+- **Vercel (alt):** `api/check.js`, `api/health.js`, `vercel.json` (rewrites /check, /health).
+- **Node/Docker:** `node server.mjs` or `Dockerfile`. Env `RAPIDAPI_PROXY_SECRET`, `PORT`.
+
+MIT.
